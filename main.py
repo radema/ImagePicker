@@ -1,7 +1,7 @@
 
 from os import listdir, stat
-
 from os.path import isfile, join
+from PIL import Image
 
 import shutil
 from local_credentials import *
@@ -17,6 +17,8 @@ images = [f for f in listdir(destination_folder) if isfile(join(destination_fold
 
 for file in files:
 	target = join(destination_folder,file+'.jpg')
-	#if file in images:
-	shutil.copyfile(join(spotlight_folder,file), target)
-	#shutil.copystat(join(spotlight_folder,file), target)
+	im = Image.open(join(spotlight_folder,file))
+	w,h = im.size
+	# we move only not cropped images
+	if w>h:
+		shutil.copyfile(join(spotlight_folder,file), target)
