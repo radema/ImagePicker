@@ -41,6 +41,7 @@ for file in files:
 			#print("Test!")
 			shutil.copyfile(join(spotlight_folder,file),join(picture_folder,file+'.jpg') )
 		else:
+			shutil.copyfile(join(spotlight_folder,file),join(image_folder+"//train//Bad",file+'.jpg') )
 			counter.update(['bad'])
 print("\n")
 print(counter)
