@@ -1,4 +1,4 @@
-model_folder = 'D:/Users/rdemaio/ImagePicker/checkpoints/ImagePicker'
+model_folder = 'D:/Users/rdemaio/ImagePicker/checkpoints/saved_model'
 
 spotlight_folder = 'C:/Users/rdemaio/AppData/Local/Packages/Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy/LocalState/Assets'
 
