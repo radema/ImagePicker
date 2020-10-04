@@ -8,7 +8,7 @@ import numpy as np
 import shutil
 from local_credentials import *
 
-import tensorflow as tf
+#import tensorflow as tf
 from tensorflow.keras import models
 
 model = models.load_model(model_folder)
@@ -20,7 +20,7 @@ files = [f for f in listdir(spotlight_folder) if isfile(join(spotlight_folder, f
 	and stat(join(spotlight_folder, f)).st_size/(1024)>100]
 
 #files name of images already present in Immagini
-images = [f for f in listdir(destination_folder) if isfile(join(destination_folder, f))]
+#images = [f for f in listdir(destination_folder) if isfile(join(destination_folder, f))]
 
 counter= Counter()
 
@@ -40,6 +40,7 @@ for file in files:
 			counter.update(['good'])
 			#print("Test!")
 			shutil.copyfile(join(spotlight_folder,file),join(picture_folder,file+'.jpg') )
+			shutil.copyfile(join(spotlight_folder,file),join(image_folder+"//train//Good",file+'.jpg') )
 		else:
 			shutil.copyfile(join(spotlight_folder,file),join(image_folder+"//train//Bad",file+'.jpg') )
 			counter.update(['bad'])
